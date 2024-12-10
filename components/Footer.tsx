@@ -13,7 +13,7 @@ const Footer = () => {
                         <div className='text-[var(--primary-yellow)] text-[16px] leading-6 p-4 w-[163px] h-[56px] rounded-r-[6px] bg-white'>Subscribe Now</div>
                     </div>
                 </div>
-                <p>Don't wait make a smart & logical quote here. Its pretty easy.</p>
+                <p>Dont wait make a smart & logical quote here. Its pretty easy.</p>
                 <div className='w-[1170px] h-[1px] bg-[var(--primary-yellow)] mt-12'></div>
             </div>
 
