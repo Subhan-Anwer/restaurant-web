@@ -18,7 +18,7 @@ export default function Home() {
         <WhyChooseUs />
         <Stats/>
         <OurMenu/>
-        {/* <Chefs/> */}
+        <Chefs/>
       </header>
     </div>
   );
