@@ -2,6 +2,7 @@ import AboutUs from "@/components/AboutUs";
 import FoodCategory from "@/components/FoodCategory";
 import Hero from "@/components/hero";
 import HomePageNavbar from "@/components/HomePageNavbar";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <AboutUs/>
         <FoodCategory/>
+        <WhyChooseUs/>
       </header>
     </div>
   );
