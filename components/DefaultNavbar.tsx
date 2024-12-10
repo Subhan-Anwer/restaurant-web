@@ -23,7 +23,7 @@ export default function Navbar() {
     setCurrentPath(path); // Update path on link click
   };
 
-  const isActiveLink = (path:any) => currentPath === path;
+  const isActiveLink = (path:string) => currentPath === path;
 
   return (
     <div className="py-4 px-8">

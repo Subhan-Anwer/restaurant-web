@@ -9,9 +9,7 @@ const HomePageNavbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+
 
 
   const [currentPath, setCurrentPath] = useState("");
@@ -26,7 +24,7 @@ const HomePageNavbar = () => {
     setCurrentPath(path); // Update path on link click
   };
 
-  const isActiveLink = (path: any) => currentPath === path;
+  const isActiveLink = (path: string) => currentPath === path;
   return (
     <div className="bg-[rgba(13,13,13,0.95)] py-4 px-8">
       <div className="container justify-self-center  flex justify-center items-center">
