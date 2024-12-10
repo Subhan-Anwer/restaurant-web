@@ -5,7 +5,7 @@ import HomePageNavbar from "@/components/HomePageNavbar";
 export default function Home() {
   return (
     <div>
-      <header className="max-h-[950px] relative  overflow-hidden">
+      <header className=" relative  overflow-hidden">
         <HomePageNavbar />
         <Hero />
         <AboutUs/>
