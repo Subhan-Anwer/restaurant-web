@@ -46,9 +46,9 @@ const Hero = () => {
                         width={900}
                         height={900}
                         quality={100}
-                        className="object-cover "
+                        className="object-cover"
                         alt="hero"
-                        src="/image.png"
+                        src="/maindish.png"
                     ></Image>
 
                 </div>
