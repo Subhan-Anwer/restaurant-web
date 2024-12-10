@@ -3,6 +3,7 @@ import FoodCategory from "@/components/FoodCategory";
 import Hero from "@/components/hero";
 import HomePageNavbar from "@/components/HomePageNavbar";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -10,9 +11,10 @@ export default function Home() {
       <header className=" relative  overflow-hidden">
         <HomePageNavbar />
         <Hero />
-        <AboutUs/>
-        <FoodCategory/>
-        <WhyChooseUs/>
+        <AboutUs />
+        <FoodCategory />
+        
+        <WhyChooseUs />
       </header>
     </div>
   );
