@@ -1,6 +1,7 @@
 import AboutUs from "@/components/AboutUs";
 import Chefs from "@/components/Chefs";
 import FoodCategory from "@/components/FoodCategory";
+import Footer from "@/components/Footer";
 import Hero from "@/components/hero";
 import HomePageNavbar from "@/components/HomePageNavbar";
 import OurMenu from "@/components/OurMenu";
@@ -19,6 +20,7 @@ export default function Home() {
         <Stats/>
         <OurMenu/>
         <Chefs/>
+        <Footer/>
       </header>
     </div>
   );

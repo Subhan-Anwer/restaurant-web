@@ -1,4 +1,5 @@
 import React from 'react'
+import ChefCard from './ChefCard'
 
 const Chefs = () => {
     return (
@@ -12,7 +13,24 @@ const Chefs = () => {
             </div>
 
             {/* chefs cards */}
-            
+            <div className='gap-5 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1'>
+                <ChefCard
+                    imgsrc='chef-1'
+                    name="D.Estwood"
+                    position='Chief Chef' />
+                <ChefCard
+                    imgsrc='chef-2'
+                    name="D.Scoriesh"
+                    position='Assistant Chef' />
+                <ChefCard
+                    imgsrc='chef-3'
+                    name="M. William"
+                    position='Advertising Chef' />
+                <ChefCard
+                    imgsrc='chef-4'
+                    name="W.Readfroad"
+                    position='Chef' />
+            </div>
         </section>
     )
 }
