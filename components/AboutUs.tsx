@@ -48,7 +48,7 @@ const AboutUs = () => {
                         quality={100}
                         className="object-cover "
                         alt="hero"
-                        src="/hero.png"
+                        src="/maindish.png"
                     ></Image>
 
                 </div>
