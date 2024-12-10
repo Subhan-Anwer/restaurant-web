@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Stats = () => {
     return (
-        <section className='w-full min-h-[469px] h-auto my-8 flex bg-[rgb(13,13,13)] items-center justify-center relative'>
+        <section className='w-full min-h-[469px] h-auto my-20 flex bg-[rgb(13,13,13)] items-center justify-center relative'>
             <Image
                 className='absolute max-w-[1923px] w-full h-full object-cover object-center opacity-[15%] -z-0'
                 src="/stats.jpeg" alt="stats"
