@@ -5,9 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Image from 'next/image';
 
-const HomePageNavbar = () => {
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const HomePageNavbar = () => {  
 
 
 
