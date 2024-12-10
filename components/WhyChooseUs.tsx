@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative w-full py-[60px] bg-[rgba(13,13,13,0.95)] flex items-center justify-center">
+    <section className="relative w-full py-[60px] bg-[rgb(13,13,13)] flex items-center justify-center">
       <div className="w-full max-w-[1320px] min-h-[716px] h-auto flex xl:flex-nowrap flex-wrap justify-center flex-col md:flex-row container mx-auto px-5 lg:gap-24 items-center">
         {/* Image box */}
         <div className="flex flex-col gap-5 md:w-1/2">

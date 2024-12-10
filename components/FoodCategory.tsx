@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const FoodCategory = () => {
     return (
-        <section className='relative w-full py-[60px] bg-[rgba(13,13,13,0.95)] flex items-center justify-center'>
+        <section className='relative w-full py-[60px] bg-[rgb(13,13,13)] flex items-center justify-center'>
             <div className='w-[1320px] min-h-[489px] h-auto'>
                 {/* Title */}
                 <div className='flex flex-col justify-center items-center'>
