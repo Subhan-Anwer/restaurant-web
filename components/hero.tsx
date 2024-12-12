@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Hero = () => {
     return (
-        <section className="relative text-white bg-[rgba(13,13,13,0.95)]">
+        <section className="relative text-white bg-[rgba(13,13,13,0.95)] justify-self-center">
             <div className="container mx-auto flex px-5 py-24 md:flex-row lg:gap-24 flex-col items-center">
 
 
@@ -49,7 +49,7 @@ const Hero = () => {
                         className="object-cover"
                         alt="hero"
                         src="/Image.png"
-                    ></Image>
+                    />
 
                 </div>
             </div>

@@ -1,12 +1,14 @@
-import AboutUs from "@/components/AboutUs";
-import Chefs from "@/components/Chefs";
-import FoodCategory from "@/components/FoodCategory";
-import Footer from "@/components/Footer";
-import Hero from "@/components/hero";
 import HomePageNavbar from "@/components/HomePageNavbar";
-import OurMenu from "@/components/OurMenu";
-import Stats from "@/components/Stats";
+import Hero from "@/components/hero";
+import AboutUs from "@/components/AboutUs";
+import FoodCategory from "@/components/FoodCategory";
 import WhyChooseUs from "@/components/WhyChooseUs";
+import Stats from "@/components/Stats";
+import OurMenu from "@/components/OurMenu";
+import Chefs from "@/components/Chefs";
+import Testimonials from "@/components/Testimonials";
+import CreativeProcess from "@/components/CreativeProcess";
+import Blog from "@/components/Blog";
 
 export default function Home() {
   return (
@@ -17,10 +19,12 @@ export default function Home() {
         <AboutUs />
         <FoodCategory />
         <WhyChooseUs />
-        <Stats/>
-        <OurMenu/>
-        <Chefs/>
-        <Footer/>
+        <Stats />
+        <OurMenu />
+        <Chefs />
+        <Testimonials />
+        <CreativeProcess />
+        <Blog />
       </header>
     </div>
   );

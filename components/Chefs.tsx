@@ -3,7 +3,7 @@ import ChefCard from './ChefCard'
 
 const Chefs = () => {
     return (
-        <section className='text-white w-full h-[657px] my-24 py-10 flex flex-col items-center'>
+        <section className='text-white w-full min-h-[657px] my-24 py-10 flex flex-col items-center'>
             {/* Title */}
             <div className='flex flex-col justify-center items-center'>
                 <h3 style={{ fontFamily: 'GreatVibes' }} className='text-3xl text-[var(--primary-yellow)] mb-5'>Chefs</h3>
@@ -13,7 +13,7 @@ const Chefs = () => {
             </div>
 
             {/* chefs cards */}
-            <div className='gap-5 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1'>
+            <div className='gap-5 grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 mt-10'>
                 <ChefCard
                     imgsrc='chef-1'
                     name="D.Estwood"
@@ -30,6 +30,11 @@ const Chefs = () => {
                     imgsrc='chef-4'
                     name="W.Readfroad"
                     position='Chef' />
+            </div>
+            <div className="flex w-[190px] justify-center mt-[80px]">
+                <button className="  w-full h-[60px] leading-[60px] text-center  text-white border-[var(--primary-yellow)] border-2 transition ease-in-out duration-300 focus:outline-none hover:bg-[var(--primary-yellow)] rounded-[30px] text-lg">
+                    See More
+                </button>
             </div>
         </section>
     )
