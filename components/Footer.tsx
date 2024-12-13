@@ -21,7 +21,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <p className="text-center xl:text-left mx-auto xl:mx-0 max-w-[450px]">
-                        Don't wait, make a smart & logical quote here. It's pretty easy.
+                        Don&#39;t wait, make a smart & logical quote here. It&#39;s pretty easy.
                     </p>
                     <div className="w-full h-[1px] bg-[var(--primary-yellow)] mt-12"></div>
                 </div>
