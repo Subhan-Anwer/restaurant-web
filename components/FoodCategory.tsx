@@ -17,22 +17,22 @@ const FoodCategory = () => {
                     <Image
                         className='w-[306px] h-[329px] justify-self-center object-cover object-center rounded-[6px]'
                         src="/food-1.jpeg" alt="image"
-                        width={1320} height={329} >
+                        width={306} height={329} >
                     </Image>
                     <Image
                         className='w-[306px] h-[329px] justify-self-center object-cover object-center rounded-[6px]'
                         src="/food-2.jpeg" alt="image"
-                        width={1320} height={329} >
+                        width={306} height={329} >
                     </Image>
                     <Image
                         className='w-[306px] h-[329px] justify-self-center object-cover object-center rounded-[6px]'
                         src="/food-3.jpeg" alt="image"
-                        width={1320} height={329} >
+                        width={306} height={329} >
                     </Image>
                     <Image
                         className='w-[306px] h-[329px] justify-self-center object-cover object-center rounded-[6px]'
                         src="/food-4.jpeg" alt="image"
-                        width={1320} height={329} >
+                        width={306} height={329} >
                     </Image>
                 </div>
             </div>

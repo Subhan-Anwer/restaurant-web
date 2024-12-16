@@ -13,8 +13,7 @@
 
 @font-face {
   font-family: 'GreatVibes';
-  src: url('/fonts/GreatVibes-Regular.woff2') format('woff2'),
-       url('/fonts/GreatVibes-Regular.ttf') format('truetype');
+  src: url('/fonts/GreatVibes-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

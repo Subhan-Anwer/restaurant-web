@@ -49,6 +49,7 @@ const Hero = () => {
                         className="object-cover"
                         alt="hero"
                         src="/Image.png"
+                        priority
                     />
 
                 </div>

@@ -24,15 +24,15 @@ const AboutUs = () => {
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
                         </p>
                         <p className="mb-3 leading-relaxed text-[18px] font-thin">
-                            <Image className='inline mr-3' src="/check.png" width={17} height={12} alt="check" />
+                            <Image className='inline mr-3 w-auto h-auto' src="/check.png" width={17} height={12} alt="check" />
                             Lacus nisi, et ac dapibus sit eu velit in consequat.
                         </p>
                         <p className="mb-3 leading-relaxed text-[18px] font-thin">
-                            <Image className='inline mr-3' src="/check.png" width={17} height={12} alt="check" />
+                            <Image className='inline mr-3 w-auto h-auto' src="/check.png" width={17} height={12} alt="check" />
                             Quisque diam pellentesque bibendum non dui volutpat fringilla
                         </p>
                         <p className="mb-6 leading-relaxed text-[18px] font-thin">
-                            <Image className='inline mr-3' src="/check.png" width={17} height={12} alt="check" />
+                            <Image className='inline mr-3 w-auto h-auto' src="/check.png" width={17} height={12} alt="check" />
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </p>
                         <div className="flex w-[190px] justify-center">

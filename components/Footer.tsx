@@ -6,6 +6,7 @@ const Footer = () => {
         <section className="mx-auto w-full flex items-center justify-center">
             <div className="max-w-[1923px] w-full min-h-[740px] flex flex-col items-center justify-between text-white">
                 {/* Top Section */}
+                <div className="w-full h-[120px]"></div>
                 <div className="w-[90%] max-w-[1170px] min-h-[142px] flex flex-col gap-5">
                     <div className="flex flex-col xl:flex-row items-center xl:justify-between gap-4">
                         <h2 className="font-bold text-[20px] sm:text-[32px] leading-[40px]">
@@ -102,7 +103,7 @@ const Footer = () => {
                                 key={idx}
                                 className="bg-white w-[36px] h-[34px] flex items-center justify-center rounded-md"
                             >
-                                <Image src={`/${icon}`} alt={`Icon ${idx + 1}`} width={16} height={18} />
+                                <Image className='w-auto h-auto' src={`/${icon}`} alt={`Icon ${idx + 1}`} width={16} height={18} />
                             </div>
                         ))}
                     </div>
