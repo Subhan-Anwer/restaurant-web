@@ -1,9 +1,34 @@
+import Header from '@/components/Header'
+import Stats from '@/components/Stats'
 import React from 'react'
+import Starter from './Starter'
+import MainCourse from './MainCourse'
+import Deserts from './Deserts'
+import Drinks from './Drinks'
+import Partners from './Partners'
 
 const Menu = () => {
   return (
-    <div className='w-screen h-full flex justify-center items-center'>
-      <h1 className='text-center w-full h-full text-5xl text-[var(--primary-green)] my-[18%] font-extrabold'>Under Construction</h1>
+    <div className="bg-white">
+      <Header title="Our Menu" link="Menu" />
+      <div className='w-full h-auto py-[120px]'>
+        {/* Starter */}
+        <Starter />
+
+        {/* Main Course */}
+        <MainCourse />
+
+        <Stats />
+
+        {/* Deserts */}
+        <Deserts />
+
+        {/* Drinks */}
+        <Drinks />
+
+        {/* Partners & Clients */}
+        <Partners />
+      </div>
     </div>
   )
 }

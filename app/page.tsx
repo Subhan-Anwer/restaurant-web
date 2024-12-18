@@ -22,7 +22,7 @@ export default function Home() {
         <Stats />
         <OurMenu />
         <Chefs />
-        <Testimonials />
+        <Testimonials color="text-[#fff]" />
         <CreativeProcess />
         <Blog />
       </header>

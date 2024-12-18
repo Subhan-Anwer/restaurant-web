@@ -1,1 +1,13 @@
-I tried my best but im slow and on sunday 3:00pm my internet router got broken and because of sunday market was closed and router got repaired on tuesday's morning my most time was wasted :(
+I tried my best :)
+
+#Pages & their Routes
+
+Home        "/"
+Menu        "/menu"
+About       "about"
+Our Chef    "/chef"
+Checkout    "/checkout"
+FAQ Page    "/faq"
+404 Page    "/_not-found"
+Sign Up     "/signup"
+Sign In     "/signin"
