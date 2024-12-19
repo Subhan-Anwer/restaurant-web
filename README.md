@@ -4,7 +4,8 @@ I tried my best :)
 
 Home        "/"
 Menu        "/menu"
-About       "about"
+About       "/about"
+Shop        "/shop"
 Our Chef    "/chef"
 Checkout    "/checkout"
 FAQ Page    "/faq"
