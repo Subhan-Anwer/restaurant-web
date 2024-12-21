@@ -22,8 +22,11 @@ const page = () => {
 
                         {/* Cards */}
                         <div className='grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6'>
-                            <Card img='1' name='Fresh Lime' price='$38.00' pricewas='$45.00' />
+                            <Card img='1' name='Fresh Lime' price='$38.00' pricewas='$45.00' icons={true} />
+                            <div className='relative'>
                             <Card img='2' name='Chocolate Muffin' font='normal' price='$28.00' />
+                            <div className='absolute w-[52px] h-[22px] rounded-[4px] text-white text-center text-sm bg-[var(--primary-yellow)] top-5 left-[20px]'>Sell</div>
+                            </div>
                             <Card img='3' name='Burger' price='$21.00' pricewas='$45.00' />
 
                             <Card img='4' name='Country Burger' price='$45.00' />

@@ -5,7 +5,7 @@ const AboutUsAbout = () => {
   return (
     <section className="w-full my-[90px] flex flex-col lg:flex-row items-center justify-center gap-10 bg-white px-4">
       {/* Images */}
-      <div className="w-full max-w-[669px] h-auto flex gap-3 border border-[#9e2b2b]">
+      <div className="w-full max-w-[669px] h-auto flex gap-3">
         <Image
           className="w-[50%] sm:w-[336px] h-[400px] sm:h-[536px] object-cover object-center rounded-md"
           src={"/blog-3.jpeg"} alt="Image"
@@ -26,7 +26,7 @@ const AboutUsAbout = () => {
       </div>
 
       {/* Text */}
-      <div className="w-full max-w-[526px] h-auto flex flex-col items-start justify-between gap-6 border border-[#9e2b2b]">
+      <div className="w-full max-w-[526px] h-auto flex flex-col items-start justify-between gap-6">
         <div className="flex items-center gap-3">
           <h3 style={{ fontFamily: 'GreatVibes' }} className="text-2xl sm:text-3xl text-[var(--primary-yellow)]">
             About us
