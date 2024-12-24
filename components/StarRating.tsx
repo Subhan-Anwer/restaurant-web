@@ -7,7 +7,7 @@ type StarRatingProps = {
 
 const StarRating = ({ stars, totalStars = 5 }: StarRatingProps) => {
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center">
             {Array.from({ length: totalStars }, (_, index) => (
                 <span
                     key={index}

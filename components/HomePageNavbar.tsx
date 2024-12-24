@@ -142,7 +142,7 @@ const HomePageNavbar = () => {
                 </Link>
               </div>
               <Link href="/cart">
-                <img src="/cart.svg" alt="cart" width={30} height={30} />
+                <Image className='w-[30px] h-[30px]' src="/cart.svg" alt="cart" width={30} height={30} />
               </Link>
             </div>
           </div>

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -138,13 +139,13 @@ export default function Navbar() {
         {/* Icons */}
         <div className="flex items-center gap-3 md:gap-5 sm:ml-0 ml-4">
           <Link href="/search">
-            <img src="/search.svg" alt="search" width={30} height={30} />
+            <Image className="w-[30px] h-[30px]" src="/search.svg" alt="search" width={30} height={30} />
           </Link>
           <Link href="/user">
-            <img src="/user.svg" alt="user" width={30} height={30} />
+            <Image className="w-[30px] h-[30px]" src="/user.svg" alt="user" width={30} height={30} />
           </Link>
           <Link href="/cart">
-            <img src="/cart.svg" alt="cart" width={30} height={30} />
+            <Image className="w-[30px] h-[30px]" src="/cart.svg" alt="cart" width={30} height={30} />
           </Link>
         </div>
       </div>

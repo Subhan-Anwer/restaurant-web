@@ -14,9 +14,9 @@ const Hero = () => {
                     <div className='mr-10 flex flex-col items-center gap-5'>
                         <div className='w-[1px] h-[125px] bg-white'></div>
                         <div className='w-[25px] h-[107px] flex flex-col gap-5 items-center'>
-                            <img className='w-[18px]' src="/facebook-icon.png" alt="" />
-                            <img className='w-[18px]' src="/twitter.png" alt="" />
-                            <img className='w-[18px]' src="/pinterest.png" alt="" />
+                            <Image className='w-[18px] h-[18px]' src="/facebook-icon.png" alt="icon" width={18} height={18} />
+                            <Image className='w-[18px] h-[18px]' src="/twitter.png" alt="icon" width={18} height={18} />
+                            <Image className='w-[18px] h-[18px]' src="/pinterest.png" alt="icon" width={18} height={18} />
                         </div>
                         <div className='w-[1px] h-[125px] bg-white'></div>
                     </div>
