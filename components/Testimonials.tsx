@@ -47,7 +47,7 @@ const Testimonials = ({ color }: { color: string }) => {
 
                         <div className="flex flex-col items-center gap-6">
                             <Image
-                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-cover object-center"
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mt-[70px] object-cover object-center"
                                 src="/Quotes.png"
                                 alt="Quotes"
                                 width={200}
