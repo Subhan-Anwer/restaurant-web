@@ -95,10 +95,10 @@ export default function Navbar() {
           </li>
           <li>
             <Link
-              href="/pages"
-              className={`${isActiveLink("/pages") ? "font-bold text-[var(--primary-yellow)]" : ""
+              href="/faq"
+              className={`${isActiveLink("/faq") ? "font-bold text-[var(--primary-yellow)]" : ""
                 }`}
-              onClick={() => handleLinkClick("/pages")}
+              onClick={() => handleLinkClick("/faq")}
             >
               Pages
             </Link>

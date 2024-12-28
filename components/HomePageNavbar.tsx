@@ -77,9 +77,9 @@ const HomePageNavbar = () => {
               </li>
               <li className="relative">
                 <Link
-                  href="/pages"
-                  className={`${isActiveLink("/pages") ? "font-bold text-[var(--primary)]" : ""}`}
-                  onClick={() => handleLinkClick("/pages")}
+                  href="/faq"
+                  className={`${isActiveLink("/faq") ? "font-bold text-[var(--primary)]" : ""}`}
+                  onClick={() => handleLinkClick("/faq")}
                 >
                   Pages
                 </Link>
