@@ -1,18 +1,18 @@
 I tried my best :)
 
-#Pages & their Routes
+<h1>Pages & their Routes</h1>
 
-Home            "/" <br>
-Menu            "/menu" <br>
-Blog            "/blog" <br>
-Blog Details    "/blog/details" <br>
-About Us        "/about" <br>
-Shop            "/shop" <br>
-Shop Details    "/shop/details" <br>
-Shpping Car     "/shopping-cart" <br>
-Our Chef        "/chefs" <br>
-Checkout        "/checkout" <br>
-FAQ Page        "/faq" <br>
-404 Page        "/_not-found" <br>
-Sign Up         "/signup" <br>
-Sign In         "/signin" <br>
+<li>Home ____________ "/"</li> <br>
+<li>Menu ____________ "/menu"</li> <br>
+<li>Blog ____________ "/blog"</li> <br>
+<li>Blog Details ____ "/blog/details"</li> <br>
+<li>About Us ________ "/about"</li> <br>
+<li>Shop ____________ "/shop"</li> <br>
+<li>Shop Details ____ "/shop/details"</li> <br>
+<li>Shpping Car _____ "/shopping-cart"</li> <br>
+<li>Our Chef ________ "/chefs"</li> <br>
+<li>Checkout ________ "/checkout"</li> <br>
+<li>FAQ Page ________ "/faq"</li> <br>
+<li>404 Page ________ "/_not-found"</li> <br>
+<li>Sign Up _________ "/signup"</li> <br>
+<li>Sign In _________ "/signin"</li> <br>

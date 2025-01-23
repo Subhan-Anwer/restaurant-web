@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const AboutUs = () => {
     return (
@@ -37,7 +38,7 @@ const AboutUs = () => {
                         </p>
                         <div className="flex w-[190px] justify-center">
                             <button className="  w-full h-[60px] leading-[60px] text-center  text-white bg-[var(--primary-yellow)] border-0 transitio ease-in-out duration-300 focus:outline-none hover:bg-[var(--primary-green)] rounded-[30px] text-lg">
-                                Read More
+                                <Link href={"/about"}>Read More</Link>
                             </button>
                         </div>
                     </div>

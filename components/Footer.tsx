@@ -12,11 +12,11 @@ const Footer = () => {
                         <h2 className="font-bold text-[20px] sm:text-[32px] leading-[40px]">
                             <span className="text-[var(--primary-yellow)]">St</span>ill You Need Our Support ?
                         </h2>
-                        <div className="flex">
-                            <div className="bg-[var(--primary-yellow)] text-white p-4 rounded-l-md text-[12px] sm:text-[16px] leading-6">
+                        <div className="grid grid-cols-5 overflow-hidden max-w-[459px] h-[55px]">
+                            <div className="col-span-3 bg-[var(--primary-yellow)] text-white p-4 rounded-l-md text-[12px] sm:text-[16px] leading-6">
                                 Enter Your Email
                             </div>
-                            <div className="bg-white text-[var(--primary-yellow)] p-4 rounded-r-md text-[12px] sm:text-[16px] leading-6">
+                            <div className="col-span-2 bg-white text-[var(--primary-yellow)] p-4 rounded-r-md text-[12px] sm:text-[16px] leading-6">
                                 Subscribe Now
                             </div>
                         </div>

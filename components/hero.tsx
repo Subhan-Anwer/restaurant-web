@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Hero = () => {
     return (
@@ -33,8 +34,8 @@ const Hero = () => {
                             Varius sed pharetra dictum neque massa congue
                         </p>
                         <div className="flex w-[190px] justify-center">
-                            <button className="  w-full h-[60px] leading-[60px] text-center  text-white bg-[var(--primary-yellow)] border-0 transitio ease-in-out duration-300 focus:outline-none hover:bg-[var(--primary-green)] rounded-[30px] text-lg">
-                                See Menu
+                            <button className="w-full h-[60px] leading-[60px] text-center text-white bg-[var(--primary-yellow)] border-0 transitio ease-in-out duration-300 focus:outline-none hover:bg-[var(--primary-green)] active:scale-[1.05] rounded-[30px] text-lg">
+                                <Link href="/menu">See Menu</Link>
                             </button>
                         </div>
                     </div>
