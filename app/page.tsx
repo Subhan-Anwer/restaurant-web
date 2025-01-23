@@ -9,8 +9,12 @@ import Chefs from "@/components/Chefs";
 import Testimonials from "@/components/Testimonials";
 import CreativeProcess from "@/components/CreativeProcess";
 import Blog from "@/components/Blog";
+import { client } from '@/sanity/lib/client'
 
-export default function Home() {
+
+
+export default  function Home() {
+
   return (
     <div>
       <header className="overflow-hidden">

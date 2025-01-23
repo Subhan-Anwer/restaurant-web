@@ -4,8 +4,26 @@ import Filter from './Filter'
 import Card from './Card'
 import Pagination from './Pagination'
 import Product from './Product'
+import { client } from '@/sanity/lib/client'
 
-const page = () => {
+async function fetchSanityData() {
+    const fetchData = await client.fetch(
+        `*[_type == "food"] {
+            name,
+            price,
+            originalPrice,
+            "imageUrl": image.asset->url
+        }`
+    );
+    return fetchData;
+}
+
+const page = async () => {
+
+    const data = await fetchSanityData();
+    console.log(data);
+
+
     return (
         <div className='bg-white'>
             <Header title="Our Shop" link="Shop" />
@@ -22,10 +40,20 @@ const page = () => {
 
                         {/* Cards */}
                         <div className='grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6'>
-                            <Card img='1' name='Fresh Lime' price='$38.00' pricewas='$45.00' icons={true} />
+
+
+                            {
+                                data.map((val: any, i: number) => {
+                                    return <Card img={val.imageUrl} name={val.name} price={val.price} pricewas={`$${val.originalPrice}`} />
+                                })
+                            }
+
+
+
+                            {/* <Card img='1' name='Fresh Lime' price='$38.00' pricewas='$45.00' icons={true} />
                             <div className='relative'>
-                            <Card img='2' name='Chocolate Muffin' font='normal' price='$28.00' />
-                            <div className='absolute w-[52px] h-[22px] rounded-[4px] text-white text-center text-sm bg-[var(--primary-yellow)] top-5 left-[20px]'>Sell</div>
+                                <Card img='2' name='Chocolate Muffin' font='normal' price='$28.00' />
+                                <div className='absolute w-[52px] h-[22px] rounded-[4px] text-white text-center text-sm bg-[var(--primary-yellow)] top-5 left-[20px]'>Sell</div>
                             </div>
                             <Card img='3' name='Burger' price='$21.00' pricewas='$45.00' />
 
@@ -43,7 +71,7 @@ const page = () => {
 
                             <Card img='7' name='Cheese Butter' font='normal' price='$10.00' />
                             <Card img='8' name='Sandwiches' price='$25.00' />
-                            <Card img='9' name='Chicken Chup' price='$12.00' />
+                            <Card img='9' name='Chicken Chup' price='$12.00' /> */}
                         </div>
 
                         {/* Pagination */}
@@ -64,8 +92,8 @@ const page = () => {
                         <div className='w-[248px] h-[372px] flex flex-col gap-6 my-6'>
                             <h3 className='font-bold text-xl text-[#333333]'>Category</h3>
                             <div className='flex flex-col gap-[14px] '>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Sandwiches' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" /><label htmlFor='Sandwiches' className='text-lg'>Sandwiches</label></div>
+                                <div className='flex items-center gap-2 bg hover:cursor-pointer'>
+                                    <input id='Sandwiches' className='w-[14px] h-[14px] hover:cursor-pointer border border-[#333333]' type="checkbox" /><label htmlFor='Sandwiches' className='text-lg'>Sandwiches</label></div>
                                 <div className='flex items-center gap-2'>
                                     <input id='Burger' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
                                     <label htmlFor='Burger' className='text-lg'>Burger</label>
@@ -129,10 +157,10 @@ const page = () => {
                         <div className='w-[252px] h-[368px] flex flex-col justify-between my-6'>
                             <h2 className='font-bold text-xl text-[#333333]'>Latest Products</h2>
                             <div className='w-full h-auto flex flex-col gap-4'>
-                                <Product name='Pizza'/>
-                                <Product name='Cupcake'/>
-                                <Product name='Cookies'/>
-                                <Product name='Burger'/>
+                                <Product name='Pizza' />
+                                <Product name='Cupcake' />
+                                <Product name='Cookies' />
+                                <Product name='Burger' />
                             </div>
                         </div>
 
