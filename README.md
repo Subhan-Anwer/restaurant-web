@@ -2,17 +2,17 @@ I tried my best :)
 
 #Pages & their Routes
 
-Home            "/"
-Menu            "/menu"
-Blog            "/blog"
-Blog Details    "/blog/details"
-About Us        "/about"
-Shop            "/shop"
-Shop Details    "/shop/details"
-Shpping Car     "/shopping-cart"
-Our Chef        "/chefs"
-Checkout        "/checkout"
-FAQ Page        "/faq"
-404 Page        "/_not-found"
-Sign Up         "/signup"
-Sign In         "/signin"
+Home            "/" <br>
+Menu            "/menu" <br>
+Blog            "/blog" <br>
+Blog Details    "/blog/details" <br>
+About Us        "/about" <br>
+Shop            "/shop" <br>
+Shop Details    "/shop/details" <br>
+Shpping Car     "/shopping-cart" <br>
+Our Chef        "/chefs" <br>
+Checkout        "/checkout" <br>
+FAQ Page        "/faq" <br>
+404 Page        "/_not-found" <br>
+Sign Up         "/signup" <br>
+Sign In         "/signin" <br>

@@ -1,5 +1,6 @@
 import React from 'react'
 import ChefCard from './ChefCard'
+import Link from 'next/link'
 
 const Chefs = () => {
     return (
@@ -33,7 +34,7 @@ const Chefs = () => {
             </div>
             <div className="flex w-[190px] justify-center mt-[80px]">
                 <button className="  w-full h-[60px] leading-[60px] text-center  text-white border-[var(--primary-yellow)] border-2 transition ease-in-out duration-300 focus:outline-none hover:bg-[var(--primary-yellow)] rounded-[30px] text-lg">
-                    See More
+                    <Link href={"/chefs"}>See More</Link>
                 </button>
             </div>
         </section>
