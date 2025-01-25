@@ -9,7 +9,7 @@ const Card = ({ img, name, font = "bold", price, pricewas, icons = false }: { im
                 src={img} alt="menu img"
                 width={312} height={267} />
 
-            <div className='flex flex-col mt-2 mb-[1px] gap-1 px-4 sm:px-0 border'>
+            <div className='flex flex-col mt-2 mb-[1px] gap-1 px-4 sm:px-0'>
                 <h3 className={`text-lg text-[#333333] 
                     ${font === "bold" ? "font-bold" : "font-normal"}`}>{name}</h3>
                 <div className='flex gap-2'>

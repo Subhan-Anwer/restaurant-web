@@ -144,7 +144,7 @@ export default function Navbar() {
           <Link href="/user">
             <Image className="w-[30px] h-[30px]" src="/user.svg" alt="user" width={30} height={30} />
           </Link>
-          <Link href="/cart">
+          <Link href="/shopping-cart">
             <Image className="w-[30px] h-[30px]" src="/cart.svg" alt="cart" width={30} height={30} />
           </Link>
         </div>

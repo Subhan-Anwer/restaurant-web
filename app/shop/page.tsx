@@ -1,5 +1,6 @@
+"use client"
 import Header from '@/components/Header'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Filter from './Filter'
 import Card from './Card'
 import Pagination from './Pagination'
@@ -18,10 +19,31 @@ async function fetchSanityData() {
     return fetchData;
 }
 
-const page = async () => {
+const page = () => {
+    const [data, setData] = useState<any[]>([]); // State for the data
+    const [currentPage, setCurrentPage] = useState(1); // State for current page
+    const cardsPerPage = 12;
+  
+    // Fetch data on component mount
+    useEffect(() => {
+      const fetchData = async () => {
+        const result = await fetchSanityData();
+        setData(result);
+      };
+  
+      fetchData();
+    }, []);
+  
+    // Pagination logic
+    const startIndex = (currentPage - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const currentData = data.slice(startIndex, endIndex);
+  
+    // Handle page change
+    const handlePageChange = (page: number) => {
+      setCurrentPage(page);
+    };
 
-    const data = await fetchSanityData();
-    console.log(data);
 
 
     return (
@@ -40,43 +62,26 @@ const page = async () => {
 
                         {/* Cards */}
                         <div className='grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6'>
-
-
                             {
-                                data.map((val: any, i: number) => {
-                                    return <Card img={val.imageUrl} name={val.name} price={val.price} pricewas={`$${val.originalPrice}`} />
+                                currentData.map((val: any, i: number) => {
+                                    return <Card
+                                        img={val.imageUrl}
+                                        name={val.name}
+                                        price={val.price}
+                                        pricewas={`$${val.originalPrice}`}
+                                    />
                                 })
                             }
-
-
-
-                            {/* <Card img='1' name='Fresh Lime' price='$38.00' pricewas='$45.00' icons={true} />
-                            <div className='relative'>
-                                <Card img='2' name='Chocolate Muffin' font='normal' price='$28.00' />
-                                <div className='absolute w-[52px] h-[22px] rounded-[4px] text-white text-center text-sm bg-[var(--primary-yellow)] top-5 left-[20px]'>Sell</div>
-                            </div>
-                            <Card img='3' name='Burger' price='$21.00' pricewas='$45.00' />
-
-                            <Card img='4' name='Country Burger' price='$45.00' />
-                            <Card img='5' name='Drink' price='$23.00' pricewas='$45.00' />
-                            <Card img='6' name='Pizza' price='$43.00' />
-
-                            <Card img='7' name='Cheese Butter' font='normal' price='$10.00' />
-                            <Card img='8' name='Sandwiches' price='$25.00' />
-                            <Card img='9' name='Chicken Chup' price='$12.00' />
-
-                            <Card img='4' name='Country Burger' price='$45.00' />
-                            <Card img='5' name='Drink' price='$23.00' pricewas='$45.00' />
-                            <Card img='6' name='Pizza' price='$43.00' />
-
-                            <Card img='7' name='Cheese Butter' font='normal' price='$10.00' />
-                            <Card img='8' name='Sandwiches' price='$25.00' />
-                            <Card img='9' name='Chicken Chup' price='$12.00' /> */}
                         </div>
 
                         {/* Pagination */}
                         <div className='mt-8 mx-auto'>
-                            <Pagination />
+                            <Pagination
+                                totalItems={data.length}
+                                itemsPerPage={cardsPerPage}
+                                currentPage={currentPage}
+                                onPageChange={handlePageChange}
+                            />
                         </div>
                     </div>
 
