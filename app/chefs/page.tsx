@@ -32,9 +32,14 @@ const page = async () => {
 
 
                     {
-                        data.map((val: any, i: number) => {
-                            return <ChefCard img={val.imageUrl} name={val.name} position={val.position} />
-                        })
+                        data.map((val: { imageUrl: string; name: string; position: string }, index: number) => (
+                            <ChefCard
+                                key={index} // Add a unique key
+                                img={val.imageUrl}
+                                name={val.name}
+                                position={val.position}
+                            />
+                        ))
                     }
 
 

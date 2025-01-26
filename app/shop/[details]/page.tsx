@@ -99,10 +99,10 @@ const page = async ({ params }: { params: { details: string } }) => {
 
                     {/* Product Cards */}
                     <div className='flex xl:flex-nowrap flex-wrap justify-center gap-6'>
-                        <Card img='/menu1.jpg' name='Fresh Lime' price='38.00' pricewas='45.00' />
-                        <Card img='/menu2.jpg' name='Chocolate Muffin' font='normal' price='28.00' icons={true} />
-                        <Card img='/menu3.jpg' name='Burger' price='21.00' />
-                        <Card img='/menu1.jpg' name='Fresh Lime' price='38.00' pricewas='45.00' />
+                        <Card img='/menu1.jpg' name='Fresh Lime' price={38.00} pricewas='45.00' />
+                        <Card img='/menu2.jpg' name='Chocolate Muffin' font='normal' price={28.00} icons={true} />
+                        <Card img='/menu3.jpg' name='Burger' price={21.00} />
+                        <Card img='/menu1.jpg' name='Fresh Lime' price={38.00} pricewas='45.00' />
                     </div>
                 </section>
             </div>

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-const Card = ({ img, name, font = "bold", price, pricewas, icons = false }: { img: string, name: string, font?: "bold" | "normal", price: string, pricewas?: string, icons?: boolean }) => {
+const Card = ({ img, name, font = "bold", price, pricewas, icons = false }: { img: string, name: string, font?: "bold" | "normal", price: number, pricewas?: string, icons?: boolean }) => {
     return (
         <div className='w-full sm:w-[312px] h-auto sm:h-[330px] bg-white relative'>
             <div className='max-w-full h-auto sm:h-[267px] overflow-hidden cursor-pointer'>

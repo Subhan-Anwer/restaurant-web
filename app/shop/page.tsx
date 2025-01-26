@@ -1,53 +1,64 @@
-"use client"
-import Header from '@/components/Header'
-import React, { useState, useEffect } from 'react'
-import Filter from './Filter'
-import Card from './Card'
-import Pagination from './Pagination'
-import Product from './Product'
-import { client } from '@/sanity/lib/client'
-import Link from 'next/link'
+"use client";
 
+import Header from '@/components/Header';
+import React, { useState, useEffect } from 'react';
+import Filter from './Filter';
+import Card from './Card';
+import Pagination from './Pagination';
+import Link from 'next/link';
+import { client } from '@/sanity/lib/client';
+import Product from './Product';
+
+// Fetch data from Sanity
 async function fetchSanityData() {
-    const fetchData = await client.fetch(
-        `*[_type == "food"] {
-            name,
-            _id,
-            price,
-            originalPrice,
-            "imageUrl": image.asset->url
-        }`
-    );
-    return fetchData;
+  const fetchData = await client.fetch(
+    `*[_type == "food"] {
+      name,
+      _id,
+      price,
+      originalPrice,
+      "imageUrl": image.asset->url
+    }`
+  );
+  return fetchData;
 }
 
-const page = async () => {
+interface FoodItem {
+    name: string;
+    _id: string;
+    price: number;
+    originalPrice: number;
+    imageUrl: string;
+  }
 
-    const [data, setData] = useState<any[]>([]); // State for the data
-    const [currentPage, setCurrentPage] = useState(1); // State for current page
-    const cardsPerPage = 9;
+const Page = () => {
+  const [data, setData] = useState<FoodItem[]>([]); // State for the data
+  const [currentPage, setCurrentPage] = useState(1); // State for current page
+  const cardsPerPage = 9; // Number of cards per page
 
-    // Fetch data on component mount
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await fetchSanityData();
-
-            setData(result);
-        };
-
-        fetchData();
-    }, []);
-
-    // Pagination logic
-    const startIndex = (currentPage - 1) * cardsPerPage;
-    const endIndex = startIndex + cardsPerPage;
-    const currentData = data.slice(startIndex, endIndex);
-
-
-    // Handle page change
-    const handlePageChange = (page: number) => {
-        setCurrentPage(page);
+  // Fetch data on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetchSanityData();
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
+
+    fetchData();
+  }, []);
+
+  // Pagination logic
+  const startIndex = (currentPage - 1) * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  const currentData = data.slice(startIndex, endIndex);
+
+  // Handle page change
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
 
 
@@ -68,8 +79,8 @@ const page = async () => {
                         {/* Cards */}
                         <div className='grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6'>
                             {
-                                currentData.map((val: any, i: number) => {
-                                    return <Link href={`/shop/${val._id}`}>
+                                currentData.map((val: { imageUrl: string; name: string; price: number, originalPrice: number, _id: string }, index: number) => {
+                                    return <Link href={`/shop/${val._id}`} key={index}>
                                         <Card
                                             img={val.imageUrl}
                                             name={val.name}
@@ -199,4 +210,4 @@ const page = async () => {
     )
 }
 
-export default page
+export default Page
