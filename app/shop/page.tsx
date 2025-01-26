@@ -6,11 +6,13 @@ import Card from './Card'
 import Pagination from './Pagination'
 import Product from './Product'
 import { client } from '@/sanity/lib/client'
+import Link from 'next/link'
 
 async function fetchSanityData() {
     const fetchData = await client.fetch(
         `*[_type == "food"] {
             name,
+            _id,
             price,
             originalPrice,
             "imageUrl": image.asset->url
@@ -19,29 +21,32 @@ async function fetchSanityData() {
     return fetchData;
 }
 
-const page = () => {
+const page = async () => {
+
     const [data, setData] = useState<any[]>([]); // State for the data
     const [currentPage, setCurrentPage] = useState(1); // State for current page
-    const cardsPerPage = 12;
-  
+    const cardsPerPage = 9;
+
     // Fetch data on component mount
     useEffect(() => {
-      const fetchData = async () => {
-        const result = await fetchSanityData();
-        setData(result);
-      };
-  
-      fetchData();
+        const fetchData = async () => {
+            const result = await fetchSanityData();
+
+            setData(result);
+        };
+
+        fetchData();
     }, []);
-  
+
     // Pagination logic
     const startIndex = (currentPage - 1) * cardsPerPage;
     const endIndex = startIndex + cardsPerPage;
     const currentData = data.slice(startIndex, endIndex);
-  
+
+
     // Handle page change
     const handlePageChange = (page: number) => {
-      setCurrentPage(page);
+        setCurrentPage(page);
     };
 
 
@@ -64,12 +69,14 @@ const page = () => {
                         <div className='grid xl:grid-cols-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6'>
                             {
                                 currentData.map((val: any, i: number) => {
-                                    return <Card
-                                        img={val.imageUrl}
-                                        name={val.name}
-                                        price={val.price}
-                                        pricewas={`$${val.originalPrice}`}
-                                    />
+                                    return <Link href={`/shop/${val._id}`}>
+                                        <Card
+                                            img={val.imageUrl}
+                                            name={val.name}
+                                            price={val.price}
+                                            pricewas={`$${val.originalPrice}`}
+                                        />
+                                    </Link>
                                 })
                             }
                         </div>

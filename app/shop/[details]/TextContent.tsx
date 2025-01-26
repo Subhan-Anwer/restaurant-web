@@ -3,28 +3,27 @@ import { useState } from "react"; import React from 'react'
 import StarRating from '@/components/StarRating'
 import Image from 'next/image'
 
-const TextContent = () => {
-
-    // Initial price state
-    const [price, setPrice] = useState(54);
+const TextContent = ({ foodName, foodPrice }: { foodName: string, foodPrice: number }) => {
+    // Initial states for quantity and total price
     const [count, setCount] = useState(1);
+    const [price, setPrice] = useState(foodPrice);
 
     // Increment function
     const increment = () => {
         setCount(count + 1);
-        setPrice(price + 54); // Update price
+        setPrice((prevPrice) => prevPrice + foodPrice); // Add the base price to the current total
     };
 
     // Decrement function
     const decrement = () => {
         if (count > 1) {
             setCount(count - 1);
-            setPrice(price - 54); // Update price
+            setPrice((prevPrice) => prevPrice - foodPrice); // Subtract the base price from the current total
         }
     };
 
     return (
-        <div className='w-full max-w-[618px] lg:px-1 px-4 sm:px-6'>
+        <div className='w-full max-w-[618px] lg:px-1 px-4 sm:px-6 h-auto'>
             <div className='flex flex-wrap gap-4 sm:flex-nowrap sm:gap-0 w-full justify-between items-center mb-4'>
                 <div className='w-[86px] h-[28px] bg-[var(--primary-yellow)] rounded-md text-sm text-white leading-7 text-center'>
                     In stock
@@ -55,8 +54,8 @@ const TextContent = () => {
                 </div>
             </div>
             {/* Heading */}
-            <h1 className='text-2xl sm:text-5xl font-bold text-[#333333] mt-2 mb-6 text-center sm:text-left'>
-                Yummy Chicken Chup
+            <h1 className='text-2xl sm:text-5xl font-bold text-[#333333] mt-2 mb-6 text-center sm:text-left text-wrap'>
+                {foodName}
             </h1>
             {/* Para */}
             <p className='w-full max-w-[608px] text-base sm:text-lg text-[#4f4f4f] mt-6 mb-8 text-center sm:text-left'>
@@ -66,7 +65,7 @@ const TextContent = () => {
             <div className='w-full h-[1px] bg-[#E0E0E0] mt-8 mb-8'></div>
             {/* Price $$ */}
             <h2 className='font-bold text-xl sm:text-[32px] text-[#333333] mt-8 mb-4'>
-                {price}.00$
+                ${price.toFixed(2)}
             </h2>
             {/* Rating */}
             <div className='w-full sm:max-w-[333px] h-[24px] flex justify-between mt-4 mb-[22px] leading-[24px] gap-2'>

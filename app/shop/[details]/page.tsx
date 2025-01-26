@@ -3,8 +3,36 @@ import Header from '@/components/Header'
 import Image from 'next/image'
 import TextContent from './TextContent';
 import Card from '../Card';
+import { client } from '@/sanity/lib/client';
 
-const page = () => {
+
+// Fetch single product based on _id
+async function fetchSanityDataById(id: string) {
+    const query = `
+      *[_type == "food" && _id == $id][0] {
+          name,
+          price,
+          originalPrice,
+          description,
+          "imageUrl": image.asset->url
+      }
+    `;
+
+    const fetchData = await client.fetch(query, { id });
+    return fetchData;
+}
+
+
+
+
+const page = async ({ params }: { params: { details: string } }) => {
+    const productData = await fetchSanityDataById(params.details);
+    console.log(productData);
+
+    // const data = await fetchSanityData();
+    // console.log(data);
+
+
     return (
         <div className='bg-white'>
             <Header title="Shop Details" link="Shop details" />
@@ -30,12 +58,12 @@ const page = () => {
                         </div>
                         <Image
                             className='lg:w-[491px] w-[80%]  xl:h-[596px] h-[500px] object-cover object-center rounded-md'
-                            src='/yummyChup.jpg' width={491} height={596} alt='Yummy Chicken' quality={100} />
+                            src={productData.imageUrl} width={600} height={600} alt='Yummy Chicken' quality={100} />
                     </div>
 
 
                     {/* Text Content */}
-                    <TextContent />
+                    <TextContent foodName={productData.name} foodPrice={productData.price} />
                 </section>
 
 
@@ -71,10 +99,10 @@ const page = () => {
 
                     {/* Product Cards */}
                     <div className='flex xl:flex-nowrap flex-wrap justify-center gap-6'>
-                        <Card img='1' name='Fresh Lime' price='$38.00' pricewas='$45.00' />
-                        <Card img='2' name='Chocolate Muffin' font='normal' price='$28.00' icons={true} />
-                        <Card img='3' name='Burger' price='$21.00' />
-                        <Card img='1' name='Fresh Lime' price='$38.00' pricewas='$45.00' />
+                        <Card img='/menu1.jpg' name='Fresh Lime' price='38.00' pricewas='45.00' />
+                        <Card img='/menu2.jpg' name='Chocolate Muffin' font='normal' price='28.00' icons={true} />
+                        <Card img='/menu3.jpg' name='Burger' price='21.00' />
+                        <Card img='/menu1.jpg' name='Fresh Lime' price='38.00' pricewas='45.00' />
                     </div>
                 </section>
             </div>
