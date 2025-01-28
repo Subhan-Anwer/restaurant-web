@@ -3,6 +3,7 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import Blog from './Blog'
 import Pagination from './Pagination'
+import Footer from '@/components/Footer'
 
 const page = () => {
     return (
@@ -20,6 +21,7 @@ const page = () => {
                 {/* Sidebar */}
                 <Sidebar/>
             </section>
+            <Footer />
         </div>
     )
 }

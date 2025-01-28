@@ -2,6 +2,7 @@ import Header from '@/components/Header'
 import React from 'react'
 import ChefCard from './ChefCard'
 import { client } from '@/sanity/lib/client'
+import Footer from '@/components/Footer';
 
 
 async function fetchSanityData() {
@@ -46,6 +47,7 @@ const page = async () => {
 
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

@@ -9,6 +9,7 @@ import Chefs from "@/components/Chefs";
 import Testimonials from "@/components/Testimonials";
 import CreativeProcess from "@/components/CreativeProcess";
 import Blog from "@/components/Blog";
+import Footer from "@/components/Footer";
 
 
 
@@ -28,6 +29,7 @@ export default  function Home() {
         <Testimonials color="text-[#fff]" />
         <CreativeProcess />
         <Blog />
+        <Footer />
       </header>
     </div>
   );

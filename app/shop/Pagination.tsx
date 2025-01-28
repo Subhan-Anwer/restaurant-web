@@ -18,7 +18,7 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onPageChange }: {
                 onClick={() => onPageChange(currentPage - 1)}
                 disabled={currentPage === 1}
             >
-                <Image src='/pgleft.png' alt='Previous' width={100} className='w-[14px] h-[17px]' />
+                <Image src='/pgleft.png' alt='Previous' width={100} height={100} className='w-[14px] h-[17px]' />
             </button>
 
             {/* Page Numbers */}
@@ -42,7 +42,7 @@ const Pagination = ({ totalItems, itemsPerPage, currentPage, onPageChange }: {
                 onClick={() => onPageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
             >
-                <Image src='/pgright.png' alt='Next' width={100} className='w-[14px] h-[17px]' />
+                <Image src='/pgright.png' alt='Next' width={100} height={100} className='w-[14px] h-[17px]' />
             </button>
         </div>
     )

@@ -2,6 +2,7 @@ import Header from '@/components/Header'
 import React from 'react'
 import ShippingAddress from './ShippingAddress'
 import SideBar from './SideBar'
+import Footer from '@/components/Footer'
 
 const page = () => {
     return (
@@ -16,6 +17,7 @@ const page = () => {
                     <SideBar />
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

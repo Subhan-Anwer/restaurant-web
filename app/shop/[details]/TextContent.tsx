@@ -3,7 +3,7 @@ import { useState } from "react"; import React from 'react'
 import StarRating from '@/components/StarRating'
 import Image from 'next/image'
 
-const TextContent = ({ foodName, foodPrice }: { foodName: string, foodPrice: number }) => {
+const TextContent = ({ foodName, foodPrice, foodDescription }: { foodName: string, foodPrice: number, foodDescription: string }) => {
     // Initial states for quantity and total price
     const [count, setCount] = useState(1);
     const [price, setPrice] = useState(foodPrice);
@@ -59,7 +59,7 @@ const TextContent = ({ foodName, foodPrice }: { foodName: string, foodPrice: num
             </h1>
             {/* Para */}
             <p className='w-full max-w-[608px] text-base sm:text-lg text-[#4f4f4f] mt-6 mb-8 text-center sm:text-left'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
+                {foodDescription}
             </p>
             {/* Divider */}
             <div className='w-full h-[1px] bg-[#E0E0E0] mt-8 mb-8'></div>

@@ -6,6 +6,7 @@ import MainCourse from './MainCourse'
 import Deserts from './Deserts'
 import Drinks from './Drinks'
 import Partners from './Partners'
+import Footer from '@/components/Footer'
 
 const Menu = () => {
   return (
@@ -29,6 +30,7 @@ const Menu = () => {
         {/* Partners & Clients */}
         <Partners />
       </div>
+      <Footer />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import React from 'react'
 import Card from './Card'
+import Footer from '@/components/Footer'
 
 const page = () => {
   return (
@@ -32,6 +33,7 @@ const page = () => {
                 </div>
             </div>
         </section>
+        <Footer />
     </div>
   )
 }

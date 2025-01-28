@@ -4,6 +4,7 @@ import Image from 'next/image'
 import TextContent from './TextContent';
 import Card from '../Card';
 import { client } from '@/sanity/lib/client';
+import Footer from '@/components/Footer';
 
 
 // Fetch single product based on _id
@@ -63,7 +64,7 @@ const page = async ({ params }: { params: { details: string } }) => {
 
 
                     {/* Text Content */}
-                    <TextContent foodName={productData.name} foodPrice={productData.price} />
+                    <TextContent foodName={productData.name} foodPrice={productData.price} foodDescription={productData.description} />
                 </section>
 
 
@@ -106,6 +107,7 @@ const page = async ({ params }: { params: { details: string } }) => {
                     </div>
                 </section>
             </div>
+            <Footer />
         </div>
     )
 }

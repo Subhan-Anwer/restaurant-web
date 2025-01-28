@@ -8,19 +8,21 @@ import Pagination from './Pagination';
 import Link from 'next/link';
 import { client } from '@/sanity/lib/client';
 import Product from './Product';
+import Footer from '@/components/Footer';
 
 // Fetch data from Sanity
 async function fetchSanityData() {
-  const fetchData = await client.fetch(
-    `*[_type == "food"] {
+    const fetchData = await client.fetch(
+        `*[_type == "food"] {
       name,
       _id,
       price,
       originalPrice,
+      category,
       "imageUrl": image.asset->url
     }`
-  );
-  return fetchData;
+    );
+    return fetchData;
 }
 
 interface FoodItem {
@@ -28,37 +30,48 @@ interface FoodItem {
     _id: string;
     price: number;
     originalPrice: number;
+    category: string;
     imageUrl: string;
-  }
+}
 
-const Page = () => {
-  const [data, setData] = useState<FoodItem[]>([]); // State for the data
-  const [currentPage, setCurrentPage] = useState(1); // State for current page
-  const cardsPerPage = 9; // Number of cards per page
+const Page = async () => {
+    const [data, setData] = useState<FoodItem[]>([]); // State for the data
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null); // State for selected category
+    const [currentPage, setCurrentPage] = useState(1); // State for current page
+    const cardsPerPage = 9; // Number of cards per page
 
-  // Fetch data on component mount
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await fetchSanityData();
-        setData(result);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
+    // Fetch data on component mount
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const result = await fetchSanityData();
+                setData(result);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+
+    const handleCategoryChange = (category: string) => {
+        setSelectedCategory(category === selectedCategory ? null : category); // Toggle category
     };
 
-    fetchData();
-  }, []);
+    const filteredData = selectedCategory
+        ? data.filter((item) => item.category === selectedCategory)
+        : data;
 
-  // Pagination logic
-  const startIndex = (currentPage - 1) * cardsPerPage;
-  const endIndex = startIndex + cardsPerPage;
-  const currentData = data.slice(startIndex, endIndex);
+    // Pagination logic
+    const startIndex = (currentPage - 1) * cardsPerPage;
+    const endIndex = startIndex + cardsPerPage;
+    const currentData = filteredData.slice(startIndex, endIndex);
 
-  // Handle page change
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
+    // Handle page change
+    const handlePageChange = (page: number) => {
+        setCurrentPage(page);
+    };
 
 
 
@@ -95,7 +108,7 @@ const Page = () => {
                         {/* Pagination */}
                         <div className='mt-8 mx-auto'>
                             <Pagination
-                                totalItems={data.length}
+                                totalItems={filteredData.length}
                                 itemsPerPage={cardsPerPage}
                                 currentPage={currentPage}
                                 onPageChange={handlePageChange}
@@ -112,41 +125,24 @@ const Page = () => {
                         </div>
 
                         {/* Category */}
-                        <div className='w-[248px] h-[372px] flex flex-col gap-6 my-6'>
-                            <h3 className='font-bold text-xl text-[#333333]'>Category</h3>
-                            <div className='flex flex-col gap-[14px] '>
-                                <div className='flex items-center gap-2 bg hover:cursor-pointer'>
-                                    <input id='Sandwiches' className='w-[14px] h-[14px] hover:cursor-pointer border border-[#333333]' type="checkbox" /><label htmlFor='Sandwiches' className='text-lg'>Sandwiches</label></div>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Burger' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
-                                    <label htmlFor='Burger' className='text-lg'>Burger</label>
-                                </div>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Chicken Chup' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
-                                    <label htmlFor='Chicken Chup' className='text-lg'>Chicken Chup</label>
-                                </div>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Drink' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
-                                    <label htmlFor='Drink' className='text-lg'>Drink</label>
-                                </div>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Pizza' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
-                                    <label htmlFor='Pizza' className='text-lg'>Pizza</label>
-                                </div>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Thi' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
-                                    <label htmlFor='Thi' className='text-lg'>Thi</label>
-                                </div>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Non Veg' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
-                                    <label htmlFor='Non Veg' className='text-lg'>Non Veg</label>
-                                </div>
-                                <div className='flex items-center gap-2'>
-                                    <input id='Uncategorized' className='w-[14px] h-[14px] border border-[#333333]' type="checkbox" />
-                                    <label htmlFor='Uncategorized' className='text-lg'>Uncategorized</label>
-                                </div>
+                        <div className="w-[248px] h-[372px] flex flex-col gap-6 my-6">
+                            <h3 className="font-bold text-xl text-[#333333]">Category</h3>
+                            <div className="flex flex-col gap-[14px]">
+                                {["Sandwich", "Burger", "Desert", "Drink", "Pizza", "Main Court", "Non Veg"].map((category) => (
+                                    <div key={category} className="flex items-center gap-2 hover:cursor-pointer">
+                                        <input
+                                            id={category}
+                                            className="w-[14px] h-[14px] border border-[#333333]"
+                                            type="checkbox"
+                                            checked={selectedCategory === category}
+                                            onChange={() => handleCategoryChange(category)}
+                                        />
+                                        <label htmlFor={category} className="text-lg">
+                                            {category}
+                                        </label>
+                                    </div>
+                                ))}
                             </div>
-
                         </div>
 
                         {/* Banner */}
@@ -205,7 +201,7 @@ const Page = () => {
                     </div>
                 </div>
             </section>
-
+            <Footer />                      
         </div>
     )
 }

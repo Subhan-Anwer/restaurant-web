@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const Footer = () => {
     return (
-        <section className="mx-auto w-full flex items-center justify-center">
+        <section className="mx-auto w-full flex items-center justify-center bg-black">
             <div className="max-w-[1923px] w-full min-h-[740px] flex flex-col items-center justify-between text-white">
                 {/* Top Section */}
                 <div className="w-full h-[120px]"></div>

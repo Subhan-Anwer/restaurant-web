@@ -5,6 +5,7 @@ import WhyChooseUsAbout from '@/components/WhyChooseUsAbout';
 import AboutUsAbout from '@/components/AboutUsAbout';
 import Testimonials from '@/components/Testimonials';
 import OurFoodMenu from '@/components/OurFoodMenu';
+import Footer from '@/components/Footer';
 
 const About = () => (
   <div className='bg-white overflow-hidden' >
@@ -29,6 +30,7 @@ const About = () => (
     <OurFoodMenu/>
 
     <div className='w-full h-[110px] bg-white'></div>
+    <Footer />
   </div>
 );
 

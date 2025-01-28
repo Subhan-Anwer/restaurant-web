@@ -2,6 +2,7 @@ import React from 'react'
 import Header from '@/components/Header'
 import Image from 'next/image'
 import type { Metadata } from "next";
+import Footer from '@/components/Footer';
 
 const SignIn = () => (
   <section className="w-full bg-white">
@@ -85,6 +86,7 @@ const SignIn = () => (
       </div>
     </div>
   </div>
+  <Footer />
 </section>
 
 )

@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import React from 'react'
 import ProductSection from './ProductSection'
+import Footer from '@/components/Footer'
 
 const page = () => {
   return (
@@ -66,7 +67,7 @@ const page = () => {
           </div>
         </div>
       </section>
-
+      <Footer />
     </div>
   )
 }
