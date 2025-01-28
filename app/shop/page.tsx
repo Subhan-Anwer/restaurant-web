@@ -34,7 +34,7 @@ interface FoodItem {
     imageUrl: string;
 }
 
-const Page = async () => {
+const Page = () => {
     const [data, setData] = useState<FoodItem[]>([]); // State for the data
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null); // State for selected category
     const [currentPage, setCurrentPage] = useState(1); // State for current page
